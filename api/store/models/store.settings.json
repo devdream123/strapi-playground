@@ -1,0 +1,35 @@
+{
+  "connection": "default",
+  "collectionName": "stores",
+  "info": {
+    "name": "Store"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "Image": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "categories": {
+      "collection": "category",
+      "via": "stores"
+    },
+    "restaurant_hours": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hours.hours-of-operations",
+      "required": true
+    }
+  }
+}

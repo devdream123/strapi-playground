@@ -1,0 +1,29 @@
+{
+  "connection": "default",
+  "collectionName": "products",
+  "info": {
+    "name": "Product"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Image": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "sub_category": {
+      "model": "sub-category",
+      "via": "products"
+    },
+    "Brand": {
+      "type": "string"
+    }
+  }
+}

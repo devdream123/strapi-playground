@@ -1,0 +1,25 @@
+{
+  "connection": "default",
+  "collectionName": "categories",
+  "info": {
+    "name": "Category"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "sub_category": {
+      "model": "sub-category",
+      "via": "categories"
+    },
+    "stores": {
+      "via": "categories",
+      "collection": "store",
+      "dominant": true
+    }
+  }
+}

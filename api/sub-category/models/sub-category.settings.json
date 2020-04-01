@@ -1,0 +1,24 @@
+{
+  "connection": "default",
+  "collectionName": "sub_categories",
+  "info": {
+    "name": "Sub Category"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "categories": {
+      "via": "sub_category",
+      "collection": "category"
+    },
+    "products": {
+      "via": "sub_category",
+      "collection": "product"
+    }
+  }
+}
